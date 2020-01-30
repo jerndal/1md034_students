@@ -21,7 +21,7 @@
                         </ul>
                     </div>
                     <div style="width:250px; float: left">
-                    <h3>Snuskis innan 17.00</h3>
+                    <h3>Sneskus</h3>
                     <img src="/img/snuskis.jpg" width="250" height="200">
                     <ul>
                         <li>960 kcal</li>
@@ -30,7 +30,7 @@
                     </ul>
                     </div>
                     <div style="width:250px; float: left">
-                    <h3>Dag Hammarskjöld</h3>
+                    <h3>Le Monde</h3>
                     <img src="/img/dag.jpg" width="250" height="200">
                     <ul>
                         <li>740 kcal</li>
@@ -64,7 +64,7 @@
 
                 <p>
                     <label for="Postnummer">Postnummer</label><br>
-                    <input type="text" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
+                    <input type="number" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
                 </p>
 
                 <p>
@@ -77,11 +77,32 @@
                         <option>Bitcoin</option>
                     </select>
                 </p>
+                <p>
+
+                    Kön <br>
+                    <input type="radio" id="man" name="fn" required="required" />
+                    <label for="man">Man</label><br>
+
+
+                    <input type="radio" id="Kvinna" name="fn" required="required"/>
+                    <label for="Kvinna">Kvinna</label><br>
+
+
+                    <input type="radio" id="Annat" name="fn" required="required"/>
+                    <label for="Annat">Annat</label><br>
+
+                    <input type="radio" id="Vill ej uppge" name="fn" required="required"/>
+                    <label for="Vill ej uppge">Vill ej uppge</label><br>
+
+                </p>
 
             </section>
         </main>
-            <a href="/map" target="_blank">Open map in new window</a>.
-    <footer>
+
+        <button type="submit"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
+
+
+        <footer>
         <p>2020 Filiduttföretaget AB</p>
     </footer>
     </body>
