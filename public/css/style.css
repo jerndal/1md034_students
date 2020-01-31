@@ -1,0 +1,147 @@
+body {
+    font-family: arial;
+    font-size: 1,5 em;
+    margin 0 auto;
+    width: 100%;
+}
+
+#Gluten {
+
+    font-weight: bold;
+}
+
+#burgers {
+    background-color: black;
+}
+
+#Vegetarisk {
+
+    font-weight: bold;
+}
+
+#laktos {
+
+    font-weight: bold;
+}
+
+.burgermenu {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: black;
+    color: white;
+    border-left: 2px dotted white;
+    border-right: 2px dotted white;
+    border-top: 2px dotted white;
+    border-bottom: 2px dotted white;
+
+}
+
+.choose {
+    margin-left: 3%;
+
+}
+.fole{
+    grid-column: 1;
+    margin-left: 3%;
+
+}
+
+.snus {
+    grid-column: 2;
+}
+
+.monde {
+    grid-column 3;
+}
+}
+#bb {
+    color: white;
+}
+#b1 {
+    color: white;
+
+}
+
+.button{
+    margin-left: 3%;
+
+
+}
+
+.header{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+
+
+
+
+}
+
+#header_pic{
+    height: auto;
+    width: 100%;
+}
+
+#head_pic{
+    opacity: 0.5;
+    height: auto;
+    width: 100% ;
+    /*
+    margin-left: 0.5%;
+    margin-right: 30%;
+*/
+}
+
+button:hover{
+    Background-color: red;
+    cursor: pointer;
+}
+
+
+
+.differentSection{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+
+
+}
+
+#information{
+    border-left: 2px dotted black;
+    border-right: 2px dotted black;
+    border-top: 2px dotted black;
+    border-bottom: 2px dotted black;
+
+}
+.info{
+    margin-left: 0.5%;
+
+}
+
+.header_2{
+    overflow:hidden;
+    height: 100%;
+    margin: 0 0.5% 0 0.5%;
+
+
+
+
+}
+
+.header_text {
+    margin-left: 35%;
+    position: absolute;
+}
+
+header {
+    /*
+    margin-left: 3%;
+    margin-right: 3%;
+*/
+}
+footer{
+    margin-left: 0.5%
+}
+button {
+    margin-left: 0.5%
+}
