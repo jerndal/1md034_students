@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
         <title>Berras Burgare</title>
-	
+
+	      <script type="text/javascript" src="js/menu.js"></script>
 	      <script defer src="js/js_script.js"></script>
 	      <script defer src="js/vue_script.js"></script>
 	      <script defer src="https://vuejs.org/js/vue.js"></script>
@@ -19,11 +20,11 @@
             </header>
             <section class = "differentSection" >
 	      <div id ="burgers">
-		<div v-for="burg in burgers">
+		<div v-for="burg in array">
 		  <h2> {{ burg.firstName }} </h2>
 				    
 		  
-		  <img v-bind:src="burg.image" width="250" height="200" align = "center">
+		  <img v-bind:src="burg.img" width="250" height="200" align = "center">
 
 		  <ul>
 		    <li>

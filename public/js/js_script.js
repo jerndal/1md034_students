@@ -137,6 +137,7 @@ for (i=0; i<menu.length; i++)
     }
 }
 */
+/*
 function menuItem(name, kCal, gluten, veg, img) {
     this.firstName = name; 
     this.calories = kCal;
@@ -171,3 +172,4 @@ let burg3 = new menuItem('Le Monde', 740, true, false, '/img/dag.jpg');
 let burg4 = new menuItem('Tango', 900, true, true, '/img/halloumi.jpg');
 
 let burg5 = new menuItem('Winter Cafe', 920, true, false, '/img/fetmaxburgare.png');
+*/
