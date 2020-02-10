@@ -10,8 +10,18 @@ body {
     font-weight: bold;
 }
 
+
 #burgers {
     background-color: black;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    background-color: black;
+    color: white;
+    border-left: 2px dotted white;
+    border-right: 2px dotted white;
+    border-top: 2px dotted white;
+    border-bottom: 2px dotted white;
+      
 }
 
 #Vegetarisk {
@@ -86,10 +96,6 @@ body {
     opacity: 0.5;
     height: auto;
     width: 100% ;
-    /*
-    margin-left: 0.5%;
-    margin-right: 30%;
-*/
 }
 
 button:hover{
@@ -145,3 +151,4 @@ footer{
 button {
     margin-left: 0.5%
 }
+

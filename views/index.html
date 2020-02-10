@@ -3,8 +3,9 @@
 <head>
         <title>Berras Burgare</title>
 	
-	      <script src="js/js_script.js"></script>
-	      <script src="js/vue_script.js"></script>
+	      <script defer src="js/js_script.js"></script>
+	      <script defer src="js/vue_script.js"></script>
+	      <script defer src="https://vuejs.org/js/vue.js"></script>
 	      <link rel="stylesheet" type="text/css" href="css/style.css"
 	      
 </head>
@@ -16,8 +17,39 @@
               <img src="/img/head.png" class ="header_pic" id = "head_pic">
 	      <script src="https://vuejs.org/js/vue.js"></script> 
             </header>
-            <section id = "burgers" class = "differentSection" >
-	      
+            <section class = "differentSection" >
+	      <div id ="burgers">
+		<div v-for="burg in burgers">
+		  <h2> {{ burg.firstName }} </h2>
+				    
+		  
+		  <img v-bind:src="burg.image" width="250" height="200" align = "center">
+
+		  <ul>
+		    <li>
+		      {{ burg.calories + " " + "kCal" }}
+		    </li>
+		    <li id ="Gluten" v-if="burg.gluten">gluten</li>
+		    <li id = "Vegetarisk" v-if="burg.vegetarian">vegetarian</li>
+
+		    
+		    
+
+
+		    <!--
+			  {{ burger.kCal }}
+			  {{ burger.gluten }}
+			  {{ burger.veg }}
+			-->
+		    
+		    
+		  </ul>
+		</div>
+	      </div>
+		
+	      <!--
+	      <v-bind:src="burger.imgSrc">
+
               <div class="burgermenu" >
                 <div class="choose">
                         <h2 id = "b1">Välj burgare</h2>
@@ -58,9 +90,11 @@
                         <li id = "bb">Saftig biff med härlig stekyta</li>
                         <section class ="allergy" class = "differentSection">
                             <li id = "bb"   >Innehåller <span id = "laktos">laktos</span></li>
-                        </section>
+</ul>
+			    -->
+            </section>
+	    
 
-                    </ul>
                     </div>
                 </div>
             </section>
