@@ -35,7 +35,7 @@ let food = [
 	"calories": 920,
 	"vegetarian": false,
 	"gluten": true,
-	"img": "/../img/fetmaxburgare.png"
+	"img": "/../img/nyburgare.jpg"
 
     },
 ]

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/deli-very.css">
           
   </head>
-
   <body id="burgerbody">
     <main id="wrap">
       
@@ -58,28 +57,6 @@
 	    <label for="email">E-mail</label><br>
 	    <input v-model="email" type="text" id="email" name="fn" required="required" placeholder="E-postadresss" />
 	  </p>
-	  <h1> Click in the map! </h1>
-	  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
-	  <div class="view-box">
-	    <div id="dots" v-on:click="addOrder">
-              <div 
-		v-for="(order, key) in orders"
-		v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-		{{key}}
-              </div>
-	    </div>
-	  </div>
-	  <!--
-	      <p>
-		<label for="Adress">Adress</label><br>
-		<input v-model="adress" type="text" id="Adress" name="fn" required="required" placeholder="Adress" />
-	      </p>
-
-	  <p>
-	    <label for="Postnummer">Postnummer</label><br>
-	    <input v-model="postnummer" type="number" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
-	  </p>
-	  -->
 	  <p>
 	    <label for="recipient">Betalningsmedel</label><br />
 	    <select v-model = "recipient" id="recipient" name="rcp">
@@ -91,6 +68,17 @@
 	    </select>
 	  </p>
 	  <p>
+	    
+	  <h1> Klicka dit du vill ha leveransen </h1>
+	  <a href="/dispatcher" target="_blank">Öppna kartan i ett nytt fönster</a>.
+	  <div class="view-box">
+	    <div id="dots" v-on:click="displayOrder">
+              <div 
+		v-bind:style="{left: theOrder.details.x + 'px', top: theOrder.details.y + 'px'}">
+		{{theOrder.orderId}}
+              </div>
+	    </div>
+	  </div>
 	    
 	    Kön <br>
 	    <input v-model="pick" type="radio" id="man" name="fn" value="Man" />
@@ -109,15 +97,15 @@
 
 	  </p>
 	</div>
-	
-	
-	
 	<div class="button" id="submitButton">
-	  <button type="submit" v-on:click="createCustomer(name, email, adress, postnummer, recipient, pick)"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
-	</div>
+	<button type="submit" v-on:click="createCustomer(name, email, adress, postnummer, recipient, pick)"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
+      </div>
       </section>
+      
+
+      
       <div id="orderInfo">
-	
+
       </div>
     </main>
 
@@ -127,7 +115,7 @@
 
   <footer>
     <div>
-      <p>  </p>
+      <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
     </div>
     <p>2020 Filiduttföretaget AB</p>
   </footer>

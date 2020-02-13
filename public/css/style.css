@@ -73,7 +73,8 @@ body {
 }
 
 .button{
-    margin-left: 3%;
+    margin-left: 0.5%;
+
 
 
 }
@@ -139,12 +140,6 @@ button:hover{
     position: absolute;
 }
 
-header {
-    /*
-    margin-left: 3%;
-    margin-right: 3%;
-*/
-}
 footer{
     margin-left: 0.5%
 }
@@ -152,3 +147,7 @@ button {
     margin-left: 0.5%
 }
 
+#orderInfo {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
