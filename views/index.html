@@ -3,20 +3,23 @@
   <head>
     <title>Berras Burgare</title>
 
-    <script type="text/javascript" src="js/menu.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="https://vuejs.org/js/vue.js"></script> 
+    <script defer src="js/menu.js"></script>
     <script defer src="js/js_script.js"></script>
     <script defer src="js/vue_script.js"></script>
-    <script src="https://vuejs.org/js/vue.js"></script> 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/deli-very.css">
+          
   </head>
-  
+
   <body id="burgerbody">
     <main id="wrap">
       
       <header class = "header_2">
-        <h1 class = "header_text">Välkommen till Berras Burgare!</h1>
-        <img src="/img/head.png" class ="header_pic" id = "head_pic">
+	<h1 class = "header_text">Välkommen till Berras Burgare!</h1>
+	<img src="/img/head.png" class ="header_pic" id = "head_pic">
 	
       </header>
       <section class="differentSection" id="test">
@@ -55,17 +58,28 @@
 	    <label for="email">E-mail</label><br>
 	    <input v-model="email" type="text" id="email" name="fn" required="required" placeholder="E-postadresss" />
 	  </p>
-
-	  <p>
-	    <label for="Adress">Adress</label><br>
-	    <input v-model="adress" type="text" id="Adress" name="fn" required="required" placeholder="Adress" />
-	  </p>
+	  <h1> Click in the map! </h1>
+	  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+	  <div class="view-box">
+	    <div id="dots" v-on:click="addOrder">
+              <div 
+		v-for="(order, key) in orders"
+		v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+		{{key}}
+              </div>
+	    </div>
+	  </div>
+	  <!--
+	      <p>
+		<label for="Adress">Adress</label><br>
+		<input v-model="adress" type="text" id="Adress" name="fn" required="required" placeholder="Adress" />
+	      </p>
 
 	  <p>
 	    <label for="Postnummer">Postnummer</label><br>
 	    <input v-model="postnummer" type="number" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
 	  </p>
-
+	  -->
 	  <p>
 	    <label for="recipient">Betalningsmedel</label><br />
 	    <select v-model = "recipient" id="recipient" name="rcp">
@@ -96,11 +110,11 @@
 	  </p>
 	</div>
 	
-      
-      
-      <div class="button" id="submitButton">
-	<button type="submit" v-on:click="createCustomer(name, email, adress, postnummer, recipient, pick)"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
-      </div>
+	
+	
+	<div class="button" id="submitButton">
+	  <button type="submit" v-on:click="createCustomer(name, email, adress, postnummer, recipient, pick)"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
+	</div>
       </section>
       <div id="orderInfo">
 	
