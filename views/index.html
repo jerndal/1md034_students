@@ -1,168 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Berras Burgare</title>
+  <head>
+    <title>Berras Burgare</title>
 
-	      <script type="text/javascript" src="js/menu.js"></script>
-	      <script defer src="js/js_script.js"></script>
-	      <script defer src="js/vue_script.js"></script>
-	      <script defer src="https://vuejs.org/js/vue.js"></script>
-	      <link rel="stylesheet" type="text/css" href="css/style.css"
-	      
-</head>
-    <body id = "burgerbody">
-        <main>
-	  
-            <header class = "header_2">
-              <h1 class = "header_text">Välkommen till Berras Burgare!</h1>
-              <img src="/img/head.png" class ="header_pic" id = "head_pic">
-	      <script src="https://vuejs.org/js/vue.js"></script> 
-            </header>
-            <section class = "differentSection" >
-	      <div id ="burgers">
-		<div v-for="burg in array">
-		  <h2> {{ burg.firstName }} </h2>
-				    
-		  
-		  <img v-bind:src="burg.img" width="250" height="200" align = "center">
-
-		  <ul>
-		    <li>
-		      {{ burg.calories + " " + "kCal" }}
-		    </li>
-		    <li id ="Gluten" v-if="burg.gluten">gluten</li>
-		    <li id = "Vegetarisk" v-if="burg.vegetarian">vegetarian</li>
-
-		    
-		    
-
-
-		    <!--
-			  {{ burger.kCal }}
-			  {{ burger.gluten }}
-			  {{ burger.veg }}
-			-->
-		    
-		    
-		  </ul>
-		</div>
-	      </div>
-		
-	      <!--
-	      <v-bind:src="burger.imgSrc">
-
-              <div class="burgermenu" >
-                <div class="choose">
-                        <h2 id = "b1">Välj burgare</h2>
-                        <p id = "b1">Det är här du väljer vilken av Berras burgare du vill ha</p>
-                    </div>
-
-                    <div class = "fole" style="width:250px; float:left">
-                        <h3 id = "bb">La Foledoledoledoff</h3>
-                        <img src="/img/umami.jpg" width="250" height="200" align = "center">
-                        <ul>
-                            <li id = "bb">870 kcal</li>
-                            <section class ="allergy" class = "differentSection">
-                                <li id = "bb">Innehåller <span id = "Gluten">gluten</span></li>
-                            </section>
-                            <li id = "bb">Krispig bacon</li>
-                            <li id = "bb">Brieost och Pecorino </li>
-                        </ul>
-                    </div>
-                    <div class ="sens">
-                    <h3 id = "bb">Sneskus</h3>
-                    <img src="/img/snuskis.jpg" width="250" height="200" align = "center">
-                    <ul>
-                        <li id = "bb">960 kcal</li>
-
-                        <section class ="allergy" class = "differentSection">
-                            <li id = "bb"><span id = "Vegetarisk">Vegetarisk</span></li>
-                        </section>
-
-                        <li id = "bb">Fylld med krispiga nachos med krämig ostsmak </li>
-                    </ul>
-                    </div>
-                    <div class ="monde">
-                    <h3 id = "bb">Le Monde</h3>
-                    <img src="/img/dag.jpg" width="250" height="200" align = "center">
-                    <ul>
-                        <li id = "bb">740 kcal</li>
-                        <li id = "bb">Berras hemgjorda dressing</li>
-                        <li id = "bb">Saftig biff med härlig stekyta</li>
-                        <section class ="allergy" class = "differentSection">
-                            <li id = "bb"   >Innehåller <span id = "laktos">laktos</span></li>
-</ul>
-			    -->
-            </section>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script defer src="js/js_script.js"></script>
+    <script defer src="js/vue_script.js"></script>
+    <script src="https://vuejs.org/js/vue.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+  </head>
+  
+  <body id="burgerbody">
+    <main id="wrap">
+      
+      <header class = "header_2">
+        <h1 class = "header_text">Välkommen till Berras Burgare!</h1>
+        <img src="/img/head.png" class ="header_pic" id = "head_pic">
+	
+      </header>
+      <section class="differentSection" id="test">
+	<div id="burgers">
+	  <div v-for="burg in array">
+	    <h2> {{ burg.firstName }} </h2>
+	    <img v-bind:src="burg.img" width="250" height="200" align="center">
 	    
+	    <input type="checkbox" v-bind:id="burg.firstName" v-bind:value="burg.firstName" v-model="burgerChoice">
+	    
+	    <ul>
+	      <li>
+		{{ burg.calories + " " + "kCal" }}
+	      </li>
+	      <li id ="Gluten" v-if="burg.gluten">gluten</li>
+	      <li id = "Vegetarisk" v-if="burg.vegetarian">vegetarian</li>
+	    </ul>
+	  </div>
+	</div>
+	
+      </section>
+      
+      <section id="information" class="differentSection">
+	<div class="info">
+	  <h2>Kundinformation</h2>
+	  <p> Fyll i dina personuppgifter för leverans</p>
+	  <h3> Leveransinformation:</h3>
 
-                    </div>
-                </div>
-            </section>
-            <section id = information class = "differentSection">
-                <div class="info">
-            <h2>Kundinformation</h2>
-                <p> Fyll i dina personuppgifter för leverans</p>
-                <h3> Leveransinformation:</h3>
+	  <p>
+	    <label for="fullname">Namn</label><br>
+	    <input v-model="name" type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn" />
+	  </p>
+	  
 
-                <p>
-                    <label for="fullname">Namn</label><br>
-                    <input type="text" id="fullname" name="fn" required="required" placeholder="För- och Efternamn" />
-                </p>
+	  <p>
+	    <label for="email">E-mail</label><br>
+	    <input v-model="email" type="text" id="email" name="fn" required="required" placeholder="E-postadresss" />
+	  </p>
 
-                <p>
-                    <label for="E-mail">E-mail</label><br>
-                    <input type="text" id="E-mail" name="fn" required="required" placeholder="E-postadresss" />
-                </p>
+	  <p>
+	    <label for="Adress">Adress</label><br>
+	    <input v-model="adress" type="text" id="Adress" name="fn" required="required" placeholder="Adress" />
+	  </p>
 
-                <p>
-                    <label for="Adress">Adress</label><br>
-                    <input type="text" id="Adress" name="fn" required="required" placeholder="Adress" />
-                </p>
+	  <p>
+	    <label for="Postnummer">Postnummer</label><br>
+	    <input v-model="postnummer" type="number" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
+	  </p>
 
-                <p>
-                    <label for="Postnummer">Postnummer</label><br>
-                    <input type="number" id="Postnummer" name="fn" required="required" placeholder="Postnummer" />
-                </p>
-
-                <p>
-                    <label for="recipient">Betalningsmedel</label><br />
-                    <select id="recipient" name="rcp">
-                        <option>Visa</option>
-                        <option>Mastercard</option>
-                        <option>Swish</option>
-                        <option>PayPal</option>
-                        <option>Bitcoin</option>
-                    </select>
-                </p>
-                <p>
-
-                    Kön <br>
-                    <input type="radio" id="man" name="fn" required="required" />
-                    <label for="man">Man</label><br>
+	  <p>
+	    <label for="recipient">Betalningsmedel</label><br />
+	    <select v-model = "recipient" id="recipient" name="rcp">
+              <option>Visa</option>
+              <option>Mastercard</option>
+              <option>Swish</option>
+              <option>PayPal</option>
+              <option>Bitcoin</option>
+	    </select>
+	  </p>
+	  <p>
+	    
+	    Kön <br>
+	    <input v-model="pick" type="radio" id="man" name="fn" value="Man" />
+	    <label for="man">Man</label><br>
 
 
-                    <input type="radio" id="Kvinna" name="fn" required="required"/>
-                    <label for="Kvinna">Kvinna</label><br>
+	    <input v-model="pick" type="radio" id="Kvinna" name="fn" value="Kvinna"/>
+	    <label for="Kvinna">Kvinna</label><br>
 
 
-                    <input type="radio" id="Annat" name="fn" required="required"/>
-                    <label for="Annat">Annat</label><br>
+	    <input v-model="pick" type="radio" id="Annat" name="fn" value="Annat"/>
+	    <label for="Annat">Annat</label><br>
 
-                    <input type="radio" id="Vill ej uppge" name="fn" required="required"/>
-                    <label for="Vill ej uppge">Vill ej uppge</label><br>
+	    <input v-model="pick" type="radio" id="Vill ej uppge" name="fn" value="Vill ej uppge"/>
+	    <label for="Vill ej uppge">Vill ej uppge</label><br>
 
-                </p>
-                </div>
-            </section>
-        </main>
-        <divclass = "button">
-            <button type="submit"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
-        </divclass>
+	  </p>
+	</div>
+	
+      
+      
+      <div class="button" id="submitButton">
+	<button type="submit" v-on:click="createCustomer(name, email, adress, postnummer, recipient, pick)"><img src="/img/shoppingcart.png" width="20" heigth="20"/> Beställ</button>
+      </div>
+      </section>
+      <div id="orderInfo">
+	
+      </div>
+    </main>
 
-     </body>
 
-        <footer>
-        <p>2020 Filiduttföretaget AB</p>
-    </footer>
+  </body>
+
+
+  <footer>
+    <div>
+      <p>  </p>
+    </div>
+    <p>2020 Filiduttföretaget AB</p>
+  </footer>
 </html>

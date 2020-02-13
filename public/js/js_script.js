@@ -173,3 +173,40 @@ let burg4 = new menuItem('Tango', 900, true, true, '/img/halloumi.jpg');
 
 let burg5 = new menuItem('Winter Cafe', 920, true, false, '/img/fetmaxburgare.png');
 */
+
+
+let submitButton = document.getElementById('submitButton');
+
+//myButton.onclick = clickButton();
+
+// Or using the event handler function
+//submitButton.addEventListener("click", clickButton);
+
+// You can pass a defined function as above (no parentheses), or provide an anonymous function
+function clickButton () {
+    console.log("Button was clicked!");
+    var name = document.getElementById("fullname").value;
+    var email = document.getElementById("E-mail").value;
+    var adress = document.getElementById("Adress").value;
+    var postnummer = document.getElementById("Postnummer").value;
+    var betalning = document.getElementById("recipient").value;
+    var gender = "";
+
+    
+    if(document.getElementById("Man").checked){
+	gender = "Man";
+    }
+    if(document.getElementById("Kvinna").checked){
+       gender = "Kvinna";
+    }
+    if(document.getElementById("Annat").checked){
+	gender = "Annat";
+    }
+    if(document.getElementById("Vill ej uppge").checked){
+	gender = "Vill ej uppge";
+    }
+    let customer = [name, email, adress, postnummer, betalning, gender];
+
+    console.log(customer);
+
+}
